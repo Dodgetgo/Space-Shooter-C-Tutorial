@@ -1,0 +1,6 @@
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\bin\Tools\New Game Project.dll
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\bin\Tools\New Game Project.pdb
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\New Game Project.csprojResolveAssemblyReference.cache
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\New Game Project.csproj.CoreCompileInputs.cache
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\New Game Project.dll
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\New Game Project.pdb

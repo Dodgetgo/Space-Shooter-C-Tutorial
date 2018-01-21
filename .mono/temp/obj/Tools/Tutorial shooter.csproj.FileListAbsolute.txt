@@ -1,0 +1,6 @@
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\bin\Tools\Tutorial shooter.dll
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\bin\Tools\Tutorial shooter.pdb
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\Tutorial shooter.csprojResolveAssemblyReference.cache
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\Tutorial shooter.csproj.CoreCompileInputs.cache
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\Tutorial shooter.dll
+C:\Users\Roger\Documents\Godot3Prog\Tutorial00\.mono\temp\obj\Tools\Tutorial shooter.pdb

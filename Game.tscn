@@ -1,0 +1,209 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game.cs" type="Script" id=1]
+[ext_resource path="res://Spawner.cs" type="Script" id=2]
+[ext_resource path="res://Player.cs" type="Script" id=3]
+[ext_resource path="res://sprites/player.png" type="Texture" id=4]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gui.cs" type="Script" id=6]
+[ext_resource path="res://sprites/hpbarOver.png" type="Texture" id=7]
+[ext_resource path="res://sprites/hpbar.png" type="Texture" id=8]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 7, 2, 4, 5, -4, 5, -7, 2, 0, -7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 208 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 144, 16 )
+
+[node name="Node" type="Node" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Spawner" type="Node2D" parent="." index="0"]
+
+script = ExtResource( 2 )
+_sections_unfolded = [ "Pause" ]
+zone_start = Vector2( 16, -16 )
+zone_end = Vector2( 260, -16 )
+
+[node name="Player" type="KinematicBody2D" parent="." index="1"]
+
+position = Vector2( 130, 400 )
+input_pickable = false
+collision_layer = 6
+collision_mask = 6
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player" index="0"]
+
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
+
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Enemy" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 120, -10 )
+
+[node name="Gui" type="Control" parent="." index="3"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Gui" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 272.0
+margin_right = 432.0
+margin_bottom = 420.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0664063, 0.102875, 1, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="Gui" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 280.0
+margin_top = 10.0
+margin_right = 410.0
+margin_bottom = 410.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="Info" type="Control" parent="Gui" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 280.0
+margin_top = 10.0
+margin_right = 410.0
+margin_bottom = 410.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Score" type="Label" parent="Gui/Info" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 45.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "SCORE:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="Hp" type="TextureProgress" parent="Gui/Info" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 22.0
+margin_right = 124.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 10.0
+step = 1.0
+page = 0.0
+value = 1.0
+exp_edit = false
+rounded = true
+texture_under = null
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = false
+_sections_unfolded = [ "Percent", "Textures" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( 260.061, 31.8442 )
+input_pickable = false
+collision_layer = 5
+collision_mask = 5
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 27.9392, 176.156 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+position = Vector2( -276.061, 176.156 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+
+position = Vector2( -132.061, 400.156 )
+shape = SubResource( 3 )
+
+
